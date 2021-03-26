@@ -24,25 +24,20 @@
 				<li>Vamos a supomer que tanto el repositorio original como el “fork” están en GitHub.</li>
 			</ol>
 		</p>
-		<p>
-			La cosa es saber cómo mantener nuestro fork actualizado, para si en un futuro queremos volver a participar en otra cuestión, este este actualizado y no sea un dolor de cabeza enorme para el desarrollador tratar de incorporar nuestras actualizaciones con partes de código obsoletas.
-		</p>
-	<p>Una vez clonado nuestro fork en nuestro equipo podemos ejecutar un: <b>git remote -v</b><br />
-		que nos mostrará los repositorios remotos a los que apunta nuestro “fork”.
-	</p>
-	<p>Deberemos añadir un nuevo repositorio remoto “upstream” que será sincronizado con el fork, para ello ejecutamos lo siguiente: <br />
+		<p>La cosa es saber cómo mantener nuestro fork actualizado, para si en un futuro queremos volver a participar en otra cuestión, este este actualizado y no sea un dolor de cabeza enorme para el desarrollador tratar de incorporar nuestras actualizaciones con partes de código obsoletas.</p>
+		<p>Una vez clonado nuestro fork en nuestro equipo podemos ejecutar un: <b>git remote -v</b><br />
+		que nos mostrará los repositorios remotos a los que apunta nuestro “fork”.</p>
+		<p>Deberemos añadir un nuevo repositorio remoto “upstream” que será sincronizado con el fork, para ello ejecutamos lo siguiente: <br />
 		git remote add upstream https://github.com/usuario_original/repositorio_original.git <br />
-		git remote add upstream https://github.com/jarubio34/ejeploreadme.git
-	</p>
-	<p>Si volvemos a ejecutar un: <b>git remote -v</b>, veremos que ahora aparece el repositorio “upstream”.</p>
-	<p>Ahora hay que enlazar nuestro repositorio local con el “upstream” para ello ejecutamos: <b>git fetch upstream</b></p>
-	<p>Hecho esto ahora deberemos “traer” los commits del repositorio original a nuestra copia. Dichos commits del repositorio se almacenarán en una rama separada llamada “upstream/master”.</p>
-	<p>Es decir que en nuestro repositorio “forkeado” y clonado habrá una rama aparte en la que se irán acumulando las actualizaciones que se hagan en el repositorio original, y deberemos ir uniendo (“merge”) a la rama master de nuestro repositorio clonado, y hecho eso podremos ir modificándolo para hacer nuestros aportes.</p>
-	<p>Vayamos a nuestra rama master de nuestro repositorio “forkeado” mediante: git checkout master y nos dirá que hemos cambiado a la rama master.(Si no tenemos rama master, seguir trabajando con main)</p>
-	<p>Reescribimos la rama main con los commits nuevos de la rama main del repositorio original con: <br />
-	git rebase upstream/main
-	</p>
-	<p>Finalmente si queremos actualizar nuestro fork remoto, lo haremos ejecutando: <br />
-		git push -f origin master</p>
+		git remote add upstream https://github.com/jarubio34/ejemploreadme.git</p>
+		<p>Si volvemos a ejecutar un: <b>git remote -v</b>, veremos que ahora aparece el repositorio “upstream”.</p>
+		<p>Ahora hay que enlazar nuestro repositorio local con el “upstream” para ello ejecutamos: <b>git fetch upstream</b></p>
+		<p>Hecho esto ahora deberemos “traer” los commits del repositorio original a nuestra copia. Dichos commits del repositorio se almacenarán en una rama separada llamada “upstream/master”.</p>
+		<p>Es decir que en nuestro repositorio “forkeado” y clonado habrá una rama aparte en la que se irán acumulando las actualizaciones que se hagan en el repositorio original, y deberemos ir uniendo (“merge”) a la rama master de nuestro repositorio clonado, y hecho eso podremos ir modificándolo para hacer nuestros aportes.</p>
+		<p>Vayamos a nuestra rama master de nuestro repositorio “forkeado” mediante: git checkout master y nos dirá que hemos cambiado a la rama master.(Si no tenemos rama master, seguir trabajando con main)</p>
+		<p>Reescribimos la rama main con los commits nuevos de la rama main del repositorio original con: <br />
+		<b>git rebase upstream/main</b>	</p>
+		<p>Finalmente si queremos actualizar nuestro fork remoto, lo haremos ejecutando: <br />
+		<b>git push -f origin master</b></p>
 </body>
 </html>
